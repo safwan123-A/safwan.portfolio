@@ -1,1 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Safwan – Model Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E8E9EF; --ink:#15171F; --muted:#5B5F70; --accent:#2B3FE0; --line:#15171F33; --panel:#D3D6E4;
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#10121A;--ink:#ECEDF3;--muted:#9A9EB2;--accent:#7D8BFF;--line:#ECEDF333;--panel:#1B1E2B;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#10121A;--ink:#ECEDF3;--muted:#9A9EB2;--accent:#7D8BFF;--line:#ECEDF333;--panel:#1B1E2B;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
 
+/* masthead */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+header.top .mark{font:500 1.15rem var(--display);font-style:italic}
+nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+
+/* cover */
+.cover{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,4vw,3rem);padding:clamp(2rem,5vw,4rem) 0 clamp(2.5rem,6vw,5rem);align-items:end}
+.name{font:500 clamp(4rem,14vw,10.5rem)/.84 var(--display);letter-spacing:-.035em;margin:0}
+.name em{display:block;font-style:italic;margin-left:.6em}
+.deck{max-width:22ch;margin:0;font:500 clamp(1.5rem,3vw,2.4rem)/1.2 var(--display);letter-spacing:-.01em}
+.issue{margin:1.2rem 0 0;font-size:.9rem;color:var(--muted)}
+.ph{position:relative;background:var(--panel);overflow:hidden;display:flex;align-items:flex-end;margin:0}
+.ph::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 70% 15%,var(--accent) 0,transparent 60%);opacity:.38}
+.ph figcaption{position:relative;padding:.8rem 1rem;font-size:.85rem;color:var(--muted)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover .ph{aspect-ratio:3/4;container-type:inline-size;width:100%;max-width:600px;justify-self:end}
+.cover .ph::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(10,12,20,.8),transparent)}
+.cover .name{position:absolute;left:0;right:0;bottom:0;z-index:2;margin:0;padding:0 1rem .9rem;color:#fff;font-size:27cqw;line-height:.85}
+
+/* sections */
+section{padding:clamp(2.5rem,6vw,5rem) 0;border-top:1px solid var(--line)}
+h2{font:500 clamp(2rem,5vw,3.4rem)/1.05 var(--display);letter-spacing:-.02em;margin:0 0 2rem}
+.profile{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,5vw,4rem)}
+.lede{font:500 clamp(1.4rem,2.6vw,2rem)/1.3 var(--display);margin:0 0 1.2rem}
+.profile p{max-width:60ch;color:var(--muted)}
+dl{margin:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink)}
+dl div{padding:.9rem 0;border-bottom:1px solid var(--line)}
+dl div:nth-child(odd){padding-right:1rem}
+dt{font-size:.85rem;color:var(--muted)}
+dd{margin:.1rem 0 0;font:500 1.35rem var(--display)}
+
+/* work */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(.7rem,2vw,1.4rem)}
+.grid .ph:nth-child(1){grid-column:span 5;aspect-ratio:4/5}
+.grid .ph:nth-child(2){grid-column:span 7;aspect-ratio:7/5}
+.grid .ph:nth-child(3){grid-column:span 4;aspect-ratio:3/4}
+.grid .ph:nth-child(4){grid-column:span 4;aspect-ratio:3/4}
+.grid .ph:nth-child(5){grid-column:span 4;aspect-ratio:3/4}
+.clients{margin:2.2rem 0 0;color:var(--muted)}
+.clients strong{color:var(--ink);font-weight:500}
+
+/* instagram */
+.ig-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.ig-head h2{margin:0}
+.btn{display:inline-block;background:var(--accent);color:var(--paper);padding:.85rem 1.6rem;text-decoration:none;font-weight:500}
+.btn:hover{filter:brightness(1.1)}
+.ig{display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem}
+.ig a{display:block;aspect-ratio:1;background:var(--panel);position:relative;overflow:hidden}
+.ig a::before{content:"";position:absolute;inset:0;background:radial-gradient(100% 80% at 30% 20%,var(--accent) 0,transparent 65%);opacity:.3;transition:opacity .2s}
+.ig a:hover::before{opacity:.6}
+.ig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.ig a:hover img{opacity:.85}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem);align-items:start}
+.contact h2{margin:0}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.3rem;font-size:.9rem;color:var(--muted)}
+input,textarea{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:.55rem 0;border-radius:0}
+textarea{min-height:7rem;resize:vertical}
+button{justify-self:start;font:500 1rem var(--body);background:var(--accent);color:#fff;border:0;padding:.85rem 1.6rem;cursor:pointer}
+:root[data-theme="dark"] button{color:#10121A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button{color:#10121A}}
+button:hover{filter:brightness(1.1)}
+#note{min-height:1.4em;margin:0;color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:1.5rem 0 2rem;font-size:.9rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+@media (max-width:760px){
+  .cover,.profile,.contact{grid-template-columns:1fr}
+  .ig{grid-template-columns:repeat(3,1fr)}
+  .cover .ph{aspect-ratio:4/5;order:-1}
+  .grid .ph:nth-child(n){grid-column:span 12;aspect-ratio:4/5}
+  .grid .ph:nth-child(2){aspect-ratio:3/2}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="mark">Safwan</span>
+    <nav aria-label="Main">
+      <a href="#profile">Profile</a>
+      <a href="#work">Selected work</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#contact">Book Safwan</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="cover">
+      <div>
+        <p class="deck">Fashion and editorial model, available for shoots, campaigns and runway work.</p>
+        <p class="issue">Portfolio, autumn 2026</p>
+      </div>
+      <figure class="ph"><img src="images/cover.jpg" alt="Safwan in a red leather jacket, arms crossed, looking to the side" style="object-position:50% 30%" decoding="async"><h1 class="name">Safwan</h1></figure>
+    </div>
+
+    <section id="profile">
+      <h2>Profile</h2>
+      <div class="profile">
+        <div>
+          <p class="lede">Calm in front of the camera, quick on set, and comfortable with both studio and location work.</p>
+          <p>Safwan works across editorial, lookbook and runway projects, takes direction well and arrives prepared. Replace this text with two or three sentences about your style, experience and the work you want more of.</p>
+        </div>
+        <dl>
+          <div><dt>Height</dt><dd>182 cm</dd></div>
+          <div><dt>Chest</dt><dd>98 cm</dd></div>
+          <div><dt>Waist</dt><dd>80 cm</dd></div>
+          <div><dt>Suit</dt><dd>EU 50</dd></div>
+          <div><dt>Shoe</dt><dd>UK 9</dd></div>
+          <div><dt>Shirt</dt><dd>M</dd></div>
+          <div><dt>Hair</dt><dd>Black</dd></div>
+          <div><dt>Eyes</dt><dd>Brown</dd></div>
+          <div><dt>Languages</dt><dd>Malayalam, Tamil, English</dd></div>
+          <div><dt>Based in</dt><dd>Nagercoil, India</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <div class="grid">
+        <figure class="ph"><img src="images/work-1.jpg" alt="Safwan in a red leather jacket, adjusting the collar" style="object-position:50% 30%" decoding="async"></figure>
+        <figure class="ph"><img src="images/work-2.jpg" alt="Safwan crouching in a red leather jacket and wide-leg jeans" style="object-position:50% 38%" decoding="async"></figure>
+        <figure class="ph"><img src="images/work-3.jpg" alt="Safwan in a white shirt with the jacket over one shoulder" style="object-position:50% 35%" decoding="async"></figure>
+        <figure class="ph"><img src="images/work-4.jpg" alt="Safwan walking with the jacket draped over his shoulders" style="object-position:50% 35%" decoding="async"></figure>
+        <figure class="ph"><img src="images/work-5.jpg" alt="Safwan in a green sweater against a concrete wall" style="object-position:50% 40%" decoding="async"></figure>
+      </div>
+      <p class="clients"><strong>Worked with:</strong> add brand, magazine and designer names here.</p>
+    </section>
+
+    <section id="instagram">
+      <div class="ig-head">
+        <h2>Instagram</h2>
+        <a class="btn" href="https://instagram.com/safwwaaaannnnnn" target="_blank" rel="noopener">Follow @safwwaaaannnnnn</a>
+      </div>
+      <div class="ig">
+        <a href="https://instagram.com/safwwaaaannnnnn" target="_blank" rel="noopener" aria-label="Instagram post 1"><img src="images/insta-1.jpg" alt="" loading="lazy" decoding="async"></a>
+        <a href="https://instagram.com/safwwaaaannnnnn" target="_blank" rel="noopener" aria-label="Instagram post 2"><img src="images/insta-2.jpg" alt="" loading="lazy" decoding="async"></a>
+        <a href="https://instagram.com/safwwaaaannnnnn" target="_blank" rel="noopener" aria-label="Instagram post 3"><img src="images/insta-3.jpg" alt="" loading="lazy" decoding="async"></a>
+        <a href="https://instagram.com/safwwaaaannnnnn" target="_blank" rel="noopener" aria-label="Instagram post 4"><img src="images/insta-4.jpg" alt="" loading="lazy" decoding="async"></a>
+        <a href="https://instagram.com/safwwaaaannnnnn" target="_blank" rel="noopener" aria-label="Instagram post 5"><img src="images/insta-5.jpg" alt="" loading="lazy" decoding="async"></a>
+        <a href="https://instagram.com/safwwaaaannnnnn" target="_blank" rel="noopener" aria-label="Instagram post 6"><img src="images/insta-6.jpg" alt="" loading="lazy" decoding="async"></a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div>
+        <h2>Book Safwan</h2>
+        <p style="color:var(--muted);max-width:36ch">Send the date, location and a short brief. You will get a reply within two working days.</p>
+        <p>bookings@yourdomain.com<br>Instagram: @safwwaaaannnnnn</p>
+      </div>
+      <form id="f">
+        <label>Your name<input name="n" required autocomplete="name"></label>
+        <label>Email<input type="email" name="e" required autocomplete="email"></label>
+        <label>Project details<textarea name="m" required></textarea></label>
+        <button type="submit">Send enquiry</button>
+        <p id="note" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Safwan</span><span>Photography credits go here</span></footer>
+</div>
+<script>
+// Demo only: this form does not send anywhere yet. Connect it to your email service or form provider.
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  document.getElementById('note').textContent='Enquiry ready to send. Connect this form to your email to receive it.';
+  this.reset();
+});
+</script>
+</body>
+</html>
